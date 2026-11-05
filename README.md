@@ -75,4 +75,4 @@ A modern web browser (Chrome, Firefox, Safari, or Edge).
 ## 👤 Author
 
 - **Ganesh Yerawar**
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [[@your-username](https://github.com/your-username)](https://github.com/GaneshGY27-Goat/WebTech-Survival-Quiz.git)
