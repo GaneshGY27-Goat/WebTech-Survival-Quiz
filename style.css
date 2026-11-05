@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.quiz-container {
+  background-color: #1e293b;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 580px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.75rem;
+}
+
+.lives-tracker {
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.timer-box {
+  background-color: #334155;
+  color: #38bdf8;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+}
+
+#question-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #f1f5f9;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-btn {
+  background-color: #334155;
+  color: #f8fafc;
+  border: 2px solid transparent;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover:not([disabled]) {
+  background-color: #475569;
+  border-color: #64748b;
+}
+
+/* Option feedback styles */
+.option-btn.correct {
+  background-color: #065f46;
+  border-color: #10b981;
+  color: #ecfdf5;
+}
+
+.option-btn.incorrect {
+  background-color: #881337;
+  border-color: #f43f5e;
+  color: #fff1f2;
+}
+
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.quiz-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Result Screen */
+#result-screen {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#result-screen h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.score-display {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+#performance-feedback {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+/* Full-Screen Failure Overlay */
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: flashPulse 0.4s ease-in-out infinite alternate;
+}
+
+.flash-card {
+  background-color: #1e293b;
+  border: 2px solid #ef4444;
+  box-shadow: 0 0 40px rgba(239, 68, 68, 0.4);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flash-icon {
+  font-size: 3rem;
+  color: #ef4444;
+  margin-bottom: 0.75rem;
+}
+
+.flash-card h2 {
+  color: #f87171;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.flash-card p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes flashPulse {
+  0% {
+    background-color: rgba(127, 29, 29, 0.55);
+  }
+  100% {
+    background-color: rgba(15, 23, 42, 0.85);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+}
